@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grace M. Steele — Writer, creative individual, and storyteller. Explore fiction, nonfiction, and creative works.">
+  <title>Grace M. Steele</title>
+
+  <!-- ── Scrollbar removal (JS — per project spec) ──────────────── -->
+  <script>
+    (function () {
+      var s = document.createElement('style');
+      s.textContent =
+        'html{-ms-overflow-style:none;scrollbar-width:none;overflow-y:scroll;}' +
+        'html::-webkit-scrollbar{display:none;width:0;height:0;}';
+      document.head.appendChild(s);
+    }());
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE-LEVEL DECORATIVE OVERLAYS
+       ============================================================ -->
+
+  <!-- Film grain — fixed, sits above all content at near-zero opacity -->
+  <div class="site-grain" aria-hidden="true"></div>
+
+  <!-- Six-stripe gem colour band pinned to top of viewport -->
+  <div class="site-gem-band" aria-hidden="true">
+    <span class="site-gem-band__stripe site-gem-band__stripe--wine"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--sienna"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--mustard"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--jade"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--navy"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--plum"></span>
+  </div>
+
+
+  <!-- ============================================================
+       SITE HEADER / NAVIGATION
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+
+      <div class="nav__logo">
+        <a href="index.html" class="nav__logo-link" aria-label="Grace M. Steele — Home">
+          <span class="nav__logo-first">Grace M.</span>
+          <span class="nav__logo-last">Steele</span>
+        </a>
+      </div>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+
+        <li class="nav__item">
+          <a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="pages/about.html" class="nav__link">About</a>
+        </li>
+
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="pages/portfolio.html" class="nav__link nav__link--has-arrow">
+            Works
+            <span class="nav__dropdown-caret" aria-hidden="true">&#9662;</span>
+          </a>
+          <ul class="nav__dropdown" id="nav-dropdown-works" role="list" aria-label="Works submenu">
+            <li class="nav__dropdown-item">
+              <a href="pages/portfolio/fiction.html" class="nav__dropdown-link">Fiction</a>
+            </li>
+            <li class="nav__dropdown-item">
+              <a href="pages/portfolio/nonfiction.html" class="nav__dropdown-link">Nonfiction</a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <div class="nav__utility">
+        <a href="https://instagram.com/g.race_michael"
+           class="nav__social-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow Grace on Instagram">
+          <svg class="nav__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="nav__social-label">@g.race_michael</span>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="site-main" id="site-main">
+
+
+    <!-- ----------------------------------------------------------------
+         HERO SECTION
+         ---------------------------------------------------------------- -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+
+      <!-- Atmospheric colour blobs — animated independently -->
+      <div class="hero__blob hero__blob--wine"    aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--navy"    aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--plum"    aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--mustard" aria-hidden="true"></div>
+
+      <!-- Concentric decorative ring -->
+      <div class="hero__ring"  aria-hidden="true"></div>
+
+      <!-- Noise texture overlay -->
+      <div class="hero__noise" aria-hidden="true"></div>
+
+      <!-- Content — staggered entrance animation -->
+      <div class="hero__content">
+        <p class="hero__eyebrow">Writer &amp; Creative Individual</p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__title-line hero__title-name">Grace</span>
+          <span class="hero__title-line hero__title-initials"><em>M. Steele</em></span>
+        </h1>
+
+        <div class="hero__rule" aria-hidden="true">
+          <span class="hero__rule-line"></span>
+          <span class="hero__rule-gem"></span>
+          <span class="hero__rule-line"></span>
+        </div>
+
+        <p class="hero__tagline">
+          Stories that illuminate the world<br>
+          from the inside&nbsp;out.
+        </p>
+
+        <div class="hero__cta-group">
+          <a href="pages/portfolio.html" class="btn btn--primary">Explore My Work</a>
+          <a href="pages/about.html"     class="btn btn--outline">About Me</a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">Scroll</span>
+        <div class="hero__scroll-track">
+          <div class="hero__scroll-thumb"></div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ----------------------------------------------------------------
+         STATEMENT SECTION
+         ---------------------------------------------------------------- -->
+    <section class="section section--statement" id="section-statement" aria-labelledby="statement-quote">
+      <div class="section__inner">
+
+        <div class="statement__gem-row" aria-hidden="true">
+          <span class="statement__gem statement__gem--wine"></span>
+          <span class="statement__gem statement__gem--sienna"></span>
+          <span class="statement__gem statement__gem--mustard"></span>
+          <span class="statement__gem statement__gem--jade"></span>
+          <span class="statement__gem statement__gem--navy"></span>
+          <span class="statement__gem statement__gem--plum"></span>
+        </div>
+
+        <blockquote class="statement__quote" id="statement-quote">
+          <p class="statement__quote-text">
+            A writer's work is never separate from who they are —<br>
+            it is who they are, made&nbsp;visible.
+          </p>
+          <cite class="statement__quote-cite">— Grace M. Steele</cite>
+        </blockquote>
+
+      </div>
+    </section>
+
+
+    <!-- ----------------------------------------------------------------
+         FEATURED WORKS SECTION
+         ---------------------------------------------------------------- -->
+    <section class="section section--works" id="section-works" aria-labelledby="works-heading">
+      <div class="section__inner">
+
+        <header class="section__header">
+          <span class="section__eyebrow">Explore</span>
+          <h2 class="section__title" id="works-heading">Creative Works</h2>
+          <p class="section__subtitle">
+            Dive into worlds built from imagination and drawn from&nbsp;life.
+          </p>
+        </header>
+
+        <div class="works__grid" id="works-grid">
+
+          <article class="works__card works__card--fiction" id="works-card-fiction">
+            <div class="works__card-color-bar" aria-hidden="true"></div>
+            <div class="works__card-glow"      aria-hidden="true"></div>
+            <div class="works__card-body">
+              <span class="works__card-eyebrow">Imaginative Worlds</span>
+              <h3 class="works__card-title">Fiction</h3>
+              <p class="works__card-desc">
+                Step into stories where the boundaries of the possible bend and stretch. From speculative landscapes to intimate character studies, each piece is a door left quietly&nbsp;ajar.
+              </p>
+              <a href="pages/portfolio/fiction.html" class="works__card-cta">
+                Read Fiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="works__card works__card--nonfiction" id="works-card-nonfiction">
+            <div class="works__card-color-bar" aria-hidden="true"></div>
+            <div class="works__card-glow"      aria-hidden="true"></div>
+            <div class="works__card-body">
+              <span class="works__card-eyebrow">True Stories</span>
+              <h3 class="works__card-title">Nonfiction</h3>
+              <p class="works__card-desc">
+                Real life, rendered in full color. Essays and reflections that explore what it means to be human — curious, contradictory, and always reaching toward&nbsp;meaning.
+              </p>
+              <a href="pages/portfolio/nonfiction.html" class="works__card-cta">
+                Read Nonfiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.works__grid -->
+
+        <div class="works__footer">
+          <a href="pages/portfolio.html" class="btn btn--ghost">View All Works</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ----------------------------------------------------------------
+         ABOUT PREVIEW SECTION
+         ---------------------------------------------------------------- -->
+    <section class="section section--about-preview" id="section-about-preview" aria-labelledby="about-preview-heading">
+      <div class="section__inner section__inner--split">
+
+        <div class="about-preview__text">
+          <span class="section__eyebrow">The Author</span>
+          <h2 class="section__title" id="about-preview-heading">Behind the&nbsp;Page</h2>
+          <p class="about-preview__body">
+            Grace M. Steele is a writer whose work spans the full spectrum of human experience — from the vividly imagined to the searingly real. Her writing is an act of discovery, both for herself and for the readers who follow her into the unknown.
+          </p>
+          <p class="about-preview__body">
+            To know her work is to know a little of who she is: curious, empathetic, and endlessly drawn to the stories that live just beneath the surface of everyday&nbsp;life.
+          </p>
+          <a href="pages/about.html" class="btn btn--primary">Learn More About Grace</a>
+        </div>
+
+        <div class="about-preview__visual" aria-hidden="true">
+          <div class="gem-mosaic" id="gem-mosaic">
+            <div class="gem-mosaic__row">
+              <div class="gem gem--wine    gem--large"></div>
+              <div class="gem gem--mustard gem--small"></div>
+            </div>
+            <div class="gem-mosaic__row">
+              <div class="gem gem--jade    gem--small"></div>
+              <div class="gem gem--plum   gem--large"></div>
+            </div>
+            <div class="gem-mosaic__row">
+              <div class="gem gem--navy   gem--large"></div>
+              <div class="gem gem--sienna gem--small"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ----------------------------------------------------------------
+         CONNECT / SOCIAL SECTION
+         ---------------------------------------------------------------- -->
+    <section class="section section--connect" id="section-connect" aria-labelledby="connect-heading">
+
+      <div class="connect__glow connect__glow--a" aria-hidden="true"></div>
+      <div class="connect__glow connect__glow--b" aria-hidden="true"></div>
+
+      <div class="section__inner section__inner--centered">
+        <span class="section__eyebrow">Follow Along</span>
+        <h2 class="section__title" id="connect-heading">Stay Connected</h2>
+        <p class="connect__body">
+          Follow Grace's creative journey on Instagram for updates, thoughts, and glimpses behind the work.
+        </p>
+        <a href="https://instagram.com/g.race_michael"
+           class="btn btn--primary btn--with-icon"
+           target="_blank"
+           rel="noopener noreferrer">
+          <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          @g.race_michael
+        </a>
+      </div>
+
+    </section>
+
+
+  </main><!-- /#site-main -->
+
+
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+
+    <!-- Mirrored gem band at footer top -->
+    <div class="footer__gem-band" aria-hidden="true">
+      <span class="footer__gem-stripe footer__gem-stripe--wine"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--sienna"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--mustard"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--jade"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--navy"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--plum"></span>
+    </div>
+
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <p class="footer__name">Grace M. Steele</p>
+        <p class="footer__descriptor">Writer &amp; Creative Individual</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul class="footer__nav-list" role="list">
+          <li class="footer__nav-item"><a href="index.html"                      class="footer__nav-link">Home</a></li>
+          <li class="footer__nav-item"><a href="pages/about.html"                class="footer__nav-link">About</a></li>
+          <li class="footer__nav-item"><a href="pages/portfolio/fiction.html"    class="footer__nav-link">Fiction</a></li>
+          <li class="footer__nav-item"><a href="pages/portfolio/nonfiction.html" class="footer__nav-link">Nonfiction</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://instagram.com/g.race_michael"
+           class="footer__social-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Grace on Instagram">
+          @g.race_michael
+        </a>
+      </div>
+
+    </div><!-- /.footer__inner -->
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 TIMBUKTU LLC All rights reserved</p>
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
