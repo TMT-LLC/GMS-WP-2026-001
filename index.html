@@ -6,7 +6,7 @@
   <meta name="description" content="Grace M. Steele — Writer, creative individual, and storyteller. Explore fiction, nonfiction, and creative works.">
   <title>Grace M. Steele</title>
 
-  <!-- ── Scrollbar removal (JS — per project spec) ──────────────── -->
+  <!-- ── Scrollbar removal ──────────────────────────────────────── -->
   <script>
     (function () {
       var s = document.createElement('style');
@@ -20,21 +20,16 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       PAGE-LEVEL DECORATIVE OVERLAYS
-       ============================================================ -->
-
-  <!-- Film grain — fixed, sits above all content at near-zero opacity -->
+  <!-- Film grain — fixed overlay -->
   <div class="site-grain" aria-hidden="true"></div>
 
-  <!-- Six-stripe gem colour band pinned to top of viewport -->
+  <!-- Six-stripe gem band pinned to top -->
   <div class="site-gem-band" aria-hidden="true">
     <span class="site-gem-band__stripe site-gem-band__stripe--wine"></span>
     <span class="site-gem-band__stripe site-gem-band__stripe--sienna"></span>
@@ -59,19 +54,15 @@
       </div>
 
       <ul class="nav__menu" id="nav-menu" role="list">
-
         <li class="nav__item">
           <a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a>
         </li>
-
         <li class="nav__item">
           <a href="pages/about.html" class="nav__link">About</a>
         </li>
-
         <li class="nav__item nav__item--has-dropdown">
-          <a href="pages/portfolio.html" class="nav__link nav__link--has-arrow">
-            Works
-            <span class="nav__dropdown-caret" aria-hidden="true">&#9662;</span>
+          <a href="pages/portfolio.html" class="nav__link">
+            Works <span class="nav__dropdown-caret" aria-hidden="true">&#9662;</span>
           </a>
           <ul class="nav__dropdown" id="nav-dropdown-works" role="list" aria-label="Works submenu">
             <li class="nav__dropdown-item">
@@ -82,15 +73,10 @@
             </li>
           </ul>
         </li>
-
       </ul>
 
       <div class="nav__utility">
-        <a href="https://instagram.com/g.race_michael"
-           class="nav__social-link"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Follow Grace on Instagram">
+        <a href="https://instagram.com/g.race_michael" class="nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow Grace on Instagram">
           <svg class="nav__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -110,30 +96,22 @@
   <main class="site-main" id="site-main">
 
 
-    <!-- ----------------------------------------------------------------
-         HERO SECTION
-         ---------------------------------------------------------------- -->
+    <!-- ── HERO ──────────────────────────────────────────────── -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
 
-      <!-- Atmospheric colour blobs — animated independently -->
-      <div class="hero__blob hero__blob--wine"    aria-hidden="true"></div>
-      <div class="hero__blob hero__blob--navy"    aria-hidden="true"></div>
-      <div class="hero__blob hero__blob--plum"    aria-hidden="true"></div>
-      <div class="hero__blob hero__blob--mustard" aria-hidden="true"></div>
-
-      <!-- Concentric decorative ring -->
-      <div class="hero__ring"  aria-hidden="true"></div>
-
-      <!-- Noise texture overlay -->
+      <!-- Static blurred colour blobs — NO animation, pure CSS radial gradients -->
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__noise" aria-hidden="true"></div>
 
-      <!-- Content — staggered entrance animation -->
+      <!-- Rotating ring: single element, cheap transform-only animation -->
+      <div class="hero__ring" aria-hidden="true"></div>
+
       <div class="hero__content">
         <p class="hero__eyebrow">Writer &amp; Creative Individual</p>
 
         <h1 class="hero__title" id="hero-title">
-          <span class="hero__title-line hero__title-name">Grace</span>
-          <span class="hero__title-line hero__title-initials"><em>M. Steele</em></span>
+          <span class="hero__title-name">Grace</span>
+          <span class="hero__title-initials"><em>M. Steele</em></span>
         </h1>
 
         <div class="hero__rule" aria-hidden="true">
@@ -153,7 +131,6 @@
         </div>
       </div>
 
-      <!-- Scroll indicator -->
       <div class="hero__scroll" aria-hidden="true">
         <span class="hero__scroll-label">Scroll</span>
         <div class="hero__scroll-track">
@@ -164,9 +141,7 @@
     </section>
 
 
-    <!-- ----------------------------------------------------------------
-         STATEMENT SECTION
-         ---------------------------------------------------------------- -->
+    <!-- ── STATEMENT ─────────────────────────────────────────── -->
     <section class="section section--statement" id="section-statement" aria-labelledby="statement-quote">
       <div class="section__inner">
 
@@ -191,25 +166,20 @@
     </section>
 
 
-    <!-- ----------------------------------------------------------------
-         FEATURED WORKS SECTION
-         ---------------------------------------------------------------- -->
+    <!-- ── WORKS ─────────────────────────────────────────────── -->
     <section class="section section--works" id="section-works" aria-labelledby="works-heading">
       <div class="section__inner">
 
         <header class="section__header">
           <span class="section__eyebrow">Explore</span>
           <h2 class="section__title" id="works-heading">Creative Works</h2>
-          <p class="section__subtitle">
-            Dive into worlds built from imagination and drawn from&nbsp;life.
-          </p>
+          <p class="section__subtitle">Dive into worlds built from imagination and drawn from&nbsp;life.</p>
         </header>
 
         <div class="works__grid" id="works-grid">
 
           <article class="works__card works__card--fiction" id="works-card-fiction">
             <div class="works__card-color-bar" aria-hidden="true"></div>
-            <div class="works__card-glow"      aria-hidden="true"></div>
             <div class="works__card-body">
               <span class="works__card-eyebrow">Imaginative Worlds</span>
               <h3 class="works__card-title">Fiction</h3>
@@ -224,7 +194,6 @@
 
           <article class="works__card works__card--nonfiction" id="works-card-nonfiction">
             <div class="works__card-color-bar" aria-hidden="true"></div>
-            <div class="works__card-glow"      aria-hidden="true"></div>
             <div class="works__card-body">
               <span class="works__card-eyebrow">True Stories</span>
               <h3 class="works__card-title">Nonfiction</h3>
@@ -237,7 +206,7 @@
             </div>
           </article>
 
-        </div><!-- /.works__grid -->
+        </div>
 
         <div class="works__footer">
           <a href="pages/portfolio.html" class="btn btn--ghost">View All Works</a>
@@ -247,9 +216,14 @@
     </section>
 
 
-    <!-- ----------------------------------------------------------------
-         ABOUT PREVIEW SECTION
-         ---------------------------------------------------------------- -->
+    <!-- ── ABOUT PREVIEW ─────────────────────────────────────── -->
+    <!--
+      Headshot integration:
+      The photo sits in a styled portrait frame on the right column.
+      A wine-colored border + gem-tone gradient shadow give it a
+      polished editorial feel that matches the dark gem palette.
+      On mobile the portrait stacks above the text block.
+    -->
     <section class="section section--about-preview" id="section-about-preview" aria-labelledby="about-preview-heading">
       <div class="section__inner section__inner--split">
 
@@ -265,20 +239,23 @@
           <a href="pages/about.html" class="btn btn--primary">Learn More About Grace</a>
         </div>
 
-        <div class="about-preview__visual" aria-hidden="true">
-          <div class="gem-mosaic" id="gem-mosaic">
-            <div class="gem-mosaic__row">
-              <div class="gem gem--wine    gem--large"></div>
-              <div class="gem gem--mustard gem--small"></div>
+        <!-- Portrait frame -->
+        <div class="about-preview__portrait-wrap" aria-hidden="false">
+          <div class="portrait-frame">
+            <!-- Decorative gem-stripe accent bar -->
+            <div class="portrait-frame__gem-bar" aria-hidden="true">
+              <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--wine"></span>
+              <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--plum"></span>
+              <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--navy"></span>
             </div>
-            <div class="gem-mosaic__row">
-              <div class="gem gem--jade    gem--small"></div>
-              <div class="gem gem--plum   gem--large"></div>
-            </div>
-            <div class="gem-mosaic__row">
-              <div class="gem gem--navy   gem--large"></div>
-              <div class="gem gem--sienna gem--small"></div>
-            </div>
+            <img
+              src="assets/img/headshot-noback.png"
+              alt="Grace M. Steele"
+              class="portrait-frame__img"
+              loading="lazy"
+            >
+            <!-- Glow halo behind image -->
+            <div class="portrait-frame__halo" aria-hidden="true"></div>
           </div>
         </div>
 
@@ -286,13 +263,10 @@
     </section>
 
 
-    <!-- ----------------------------------------------------------------
-         CONNECT / SOCIAL SECTION
-         ---------------------------------------------------------------- -->
+    <!-- ── CONNECT ────────────────────────────────────────────── -->
     <section class="section section--connect" id="section-connect" aria-labelledby="connect-heading">
 
-      <div class="connect__glow connect__glow--a" aria-hidden="true"></div>
-      <div class="connect__glow connect__glow--b" aria-hidden="true"></div>
+      <div class="connect__bg" aria-hidden="true"></div>
 
       <div class="section__inner section__inner--centered">
         <span class="section__eyebrow">Follow Along</span>
@@ -300,10 +274,7 @@
         <p class="connect__body">
           Follow Grace's creative journey on Instagram for updates, thoughts, and glimpses behind the work.
         </p>
-        <a href="https://instagram.com/g.race_michael"
-           class="btn btn--primary btn--with-icon"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a href="https://instagram.com/g.race_michael" class="btn btn--primary btn--with-icon" target="_blank" rel="noopener noreferrer">
           <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -316,7 +287,7 @@
     </section>
 
 
-  </main><!-- /#site-main -->
+  </main>
 
 
   <!-- ============================================================
@@ -324,7 +295,6 @@
        ============================================================ -->
   <footer class="site-footer" id="site-footer">
 
-    <!-- Mirrored gem band at footer top -->
     <div class="footer__gem-band" aria-hidden="true">
       <span class="footer__gem-stripe footer__gem-stripe--wine"></span>
       <span class="footer__gem-stripe footer__gem-stripe--sienna"></span>
@@ -351,23 +321,18 @@
       </nav>
 
       <div class="footer__social">
-        <a href="https://instagram.com/g.race_michael"
-           class="footer__social-link"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Grace on Instagram">
+        <a href="https://instagram.com/g.race_michael" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Grace on Instagram">
           @g.race_michael
         </a>
       </div>
 
-    </div><!-- /.footer__inner -->
+    </div>
 
     <div class="footer__bottom">
       <p class="footer__copyright">&copy; 2026 TIMBUKTU LLC All rights reserved</p>
     </div>
 
   </footer>
-
 
 </body>
 </html>
