@@ -3,33 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Grace M. Steele — Writer, creative individual, and storyteller. Explore fiction, nonfiction, and creative works.">
+  <meta name="description" content="Grace M. Steele - Writer, creative individual, and storyteller. Explore fiction, nonfiction, and creative works.">
   <title>Grace M. Steele</title>
 
-  <!-- ── Scrollbar removal ──────────────────────────────────────── -->
-  <script>
-    (function () {
-      var s = document.createElement('style');
-      s.textContent =
-        'html{-ms-overflow-style:none;scrollbar-width:none;overflow-y:scroll;}' +
-        'html::-webkit-scrollbar{display:none;width:0;height:0;}';
-      document.head.appendChild(s);
-    }());
-  </script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
 
-  <!-- Film grain — fixed overlay -->
   <div class="site-grain" aria-hidden="true"></div>
 
-  <!-- Six-stripe gem band pinned to top -->
   <div class="site-gem-band" aria-hidden="true">
     <span class="site-gem-band__stripe site-gem-band__stripe--wine"></span>
     <span class="site-gem-band__stripe site-gem-band__stripe--sienna"></span>
@@ -40,14 +26,12 @@
   </div>
 
 
-  <!-- ============================================================
-       SITE HEADER / NAVIGATION
-       ============================================================ -->
+  <!-- Header -->
   <header class="site-header" id="site-header">
     <nav class="nav" id="main-nav" aria-label="Main navigation">
 
       <div class="nav__logo">
-        <a href="index.html" class="nav__logo-link" aria-label="Grace M. Steele — Home">
+        <a href="index.html" class="nav__logo-link" aria-label="Grace M. Steele, Home">
           <span class="nav__logo-first">Grace M.</span>
           <span class="nav__logo-last">Steele</span>
         </a>
@@ -56,9 +40,6 @@
       <ul class="nav__menu" id="nav-menu" role="list">
         <li class="nav__item">
           <a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a>
-        </li>
-        <li class="nav__item">
-          <a href="pages/about.html" class="nav__link">About</a>
         </li>
         <li class="nav__item nav__item--has-dropdown">
           <a href="pages/portfolio.html" class="nav__link">
@@ -72,6 +53,9 @@
               <a href="pages/portfolio/nonfiction.html" class="nav__dropdown-link">Nonfiction</a>
             </li>
           </ul>
+        </li>
+        <li class="nav__item">
+          <a href="pages/about.html" class="nav__link">About</a>
         </li>
       </ul>
 
@@ -90,24 +74,21 @@
   </header>
 
 
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
   <main class="site-main" id="site-main">
 
 
-    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <!-- Hero -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
 
-      <!-- Static blurred colour blobs — NO animation, pure CSS radial gradients -->
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__noise" aria-hidden="true"></div>
-
-      <!-- Rotating ring: single element, cheap transform-only animation -->
       <div class="hero__ring" aria-hidden="true"></div>
 
+      <span class="section__chapter" aria-hidden="true">I</span>
+
       <div class="hero__content">
-        <p class="hero__eyebrow">Writer & Creative Individual</p>
+
+        <p class="hero__eyebrow">Writer &amp; Creative Individual</p>
 
         <h1 class="hero__title" id="hero-title">
           <span class="hero__title-name">Grace</span>
@@ -121,31 +102,35 @@
         </div>
 
         <p class="hero__tagline">
-         [Input content here]<br>
+          [Input content here]<br>
           [Input content here]
         </p>
 
         <div class="hero__cta-group">
           <a href="pages/portfolio.html" class="btn btn--primary">Explore My Work</a>
-          <a href="pages/about.html"     class="btn btn--outline">About Me</a>
+          <a href="pages/about.html" class="btn btn--outline">About Me</a>
         </div>
+
       </div>
 
-      <div class="hero__scroll" aria-hidden="true">
-        <span class="hero__scroll-label">Scroll</span>
-        <div class="hero__scroll-track">
-          <div class="hero__scroll-thumb"></div>
-        </div>
-      </div>
+      <button class="section__next-btn hero__next-btn" data-target="section-statement" aria-label="Continue to next section">
+        <span class="section__next-label">Continue</span>
+        <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
 
     </section>
 
 
-    <!-- ── STATEMENT ─────────────────────────────────────────── -->
+    <!-- Statement -->
     <section class="section section--statement" id="section-statement" aria-labelledby="statement-quote">
+
+      <span class="section__chapter" aria-hidden="true">II</span>
+
       <div class="section__inner">
 
-        <div class="statement__gem-row" aria-hidden="true">
+        <div class="statement__gem-row anim-write" aria-hidden="true">
           <span class="statement__gem statement__gem--wine"></span>
           <span class="statement__gem statement__gem--sienna"></span>
           <span class="statement__gem statement__gem--mustard"></span>
@@ -155,50 +140,57 @@
         </div>
 
         <blockquote class="statement__quote" id="statement-quote">
-          <p class="statement__quote-text">
+          <p class="statement__quote-text anim-write">
             [Input content here]
           </p>
-          <cite class="statement__quote-cite">— Grace M. Steele</cite>
+          <cite class="statement__quote-cite anim-write">Grace M. Steele</cite>
         </blockquote>
 
       </div>
+
+      <button class="section__next-btn" data-target="section-works" aria-label="Continue to Works">
+        <span class="section__next-label">Continue</span>
+        <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
     </section>
 
 
-    <!-- ── WORKS ─────────────────────────────────────────────── -->
+    <!-- Works -->
     <section class="section section--works" id="section-works" aria-labelledby="works-heading">
+
+      <span class="section__chapter" aria-hidden="true">III</span>
+
       <div class="section__inner">
 
         <header class="section__header">
-          <span class="section__eyebrow">Explore</span>
-          <h2 class="section__title" id="works-heading">Creative Works</h2>
-          <p class="section__subtitle">[Input content here]</p>
+          <span class="section__eyebrow anim-write">Explore</span>
+          <h2 class="section__title anim-write" id="works-heading">Creative Works</h2>
+          <p class="section__subtitle anim-write">[Input content here]</p>
         </header>
 
         <div class="works__grid" id="works-grid">
 
-          <article class="works__card works__card--fiction" id="works-card-fiction">
+          <article class="works__card works__card--fiction anim-write" id="works-card-fiction">
             <div class="works__card-color-bar" aria-hidden="true"></div>
             <div class="works__card-body">
               <span class="works__card-eyebrow">Imaginative Worlds</span>
               <h3 class="works__card-title">Fiction</h3>
-              <p class="works__card-desc">
-               [Input content here]
-              </p>
+              <p class="works__card-desc">[Input content here]</p>
               <a href="pages/portfolio/fiction.html" class="works__card-cta">
                 Read Fiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </article>
 
-          <article class="works__card works__card--nonfiction" id="works-card-nonfiction">
+          <article class="works__card works__card--nonfiction anim-write" id="works-card-nonfiction">
             <div class="works__card-color-bar" aria-hidden="true"></div>
             <div class="works__card-body">
               <span class="works__card-eyebrow">True Stories</span>
               <h3 class="works__card-title">Nonfiction</h3>
-              <p class="works__card-desc">
-                [Input content here]
-              </p>
+              <p class="works__card-desc">[Input content here]</p>
               <a href="pages/portfolio/nonfiction.html" class="works__card-cta">
                 Read Nonfiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -207,41 +199,39 @@
 
         </div>
 
-        <div class="works__footer">
+        <div class="works__footer anim-write">
           <a href="pages/portfolio.html" class="btn btn--ghost">View All Works</a>
         </div>
 
       </div>
+
+      <button class="section__next-btn" data-target="section-about-preview" aria-label="Continue to About">
+        <span class="section__next-label">Continue</span>
+        <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
     </section>
 
 
-    <!-- ── ABOUT PREVIEW ─────────────────────────────────────── -->
-    <!--
-      Headshot integration:
-      The photo sits in a styled portrait frame on the right column.
-      A wine-colored border + gem-tone gradient shadow give it a
-      polished editorial feel that matches the dark gem palette.
-      On mobile the portrait stacks above the text block.
-    -->
+    <!-- About Preview -->
     <section class="section section--about-preview" id="section-about-preview" aria-labelledby="about-preview-heading">
+
+      <span class="section__chapter" aria-hidden="true">IV</span>
+
       <div class="section__inner section__inner--split">
 
         <div class="about-preview__text">
-          <span class="section__eyebrow">The Author</span>
-          <h2 class="section__title" id="about-preview-heading">Behind the&nbsp;Page</h2>
-          <p class="about-preview__body">
-            [Input content here]
-          </p>
-          <p class="about-preview__body">
-            [Input content here]
-          </p>
-          <a href="pages/about.html" class="btn btn--primary">Learn More About Grace</a>
+          <span class="section__eyebrow anim-write">The Author</span>
+          <h2 class="section__title anim-write" id="about-preview-heading">Behind the Page</h2>
+          <p class="about-preview__body anim-write">[Input content here]</p>
+          <p class="about-preview__body anim-write">[Input content here]</p>
+          <a href="pages/about.html" class="btn btn--primary anim-write">Learn More About Grace</a>
         </div>
 
-        <!-- Portrait frame -->
-        <div class="about-preview__portrait-wrap" aria-hidden="false">
+        <div class="about-preview__portrait-wrap anim-write">
           <div class="portrait-frame">
-            <!-- Decorative gem-stripe accent bar -->
             <div class="portrait-frame__gem-bar" aria-hidden="true">
               <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--wine"></span>
               <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--plum"></span>
@@ -253,27 +243,35 @@
               class="portrait-frame__img"
               loading="lazy"
             >
-            <!-- Glow halo behind image -->
             <div class="portrait-frame__halo" aria-hidden="true"></div>
+            <p class="portrait-frame__caption" aria-hidden="true"><em>Grace M. Steele</em></p>
           </div>
         </div>
 
       </div>
+
+      <button class="section__next-btn" data-target="section-connect" aria-label="Continue to Connect">
+        <span class="section__next-label">Continue</span>
+        <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
     </section>
 
 
-    <!-- ── CONNECT ────────────────────────────────────────────── -->
+    <!-- Connect -->
     <section class="section section--connect" id="section-connect" aria-labelledby="connect-heading">
+
+      <span class="section__chapter" aria-hidden="true">V</span>
 
       <div class="connect__bg" aria-hidden="true"></div>
 
       <div class="section__inner section__inner--centered">
-        <span class="section__eyebrow">Follow Along</span>
-        <h2 class="section__title" id="connect-heading">Stay Connected</h2>
-        <p class="connect__body">
-          [Input content here]
-        </p>
-        <a href="https://instagram.com/g.race_michael" class="btn btn--primary btn--with-icon" target="_blank" rel="noopener noreferrer">
+        <span class="section__eyebrow anim-write">Follow Along</span>
+        <h2 class="section__title anim-write" id="connect-heading">Stay Connected</h2>
+        <p class="connect__body anim-write">[Input content here]</p>
+        <a href="https://instagram.com/g.race_michael" class="btn btn--primary btn--with-icon anim-write" target="_blank" rel="noopener noreferrer">
           <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -289,9 +287,7 @@
   </main>
 
 
-  <!-- ============================================================
-       SITE FOOTER
-       ============================================================ -->
+  <!-- Footer -->
   <footer class="site-footer" id="site-footer">
 
     <div class="footer__gem-band" aria-hidden="true">
@@ -307,14 +303,14 @@
 
       <div class="footer__brand">
         <p class="footer__name">Grace M. Steele</p>
-        <p class="footer__descriptor">Writer & Creative Individual</p>
+        <p class="footer__descriptor">Writer &amp; Creative Individual</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
         <ul class="footer__nav-list" role="list">
-          <li class="footer__nav-item"><a href="index.html"                      class="footer__nav-link">Home</a></li>
-          <li class="footer__nav-item"><a href="pages/about.html"                class="footer__nav-link">About</a></li>
-          <li class="footer__nav-item"><a href="pages/portfolio/fiction.html"    class="footer__nav-link">Fiction</a></li>
+          <li class="footer__nav-item"><a href="index.html" class="footer__nav-link">Home</a></li>
+          <li class="footer__nav-item"><a href="pages/about.html" class="footer__nav-link">About</a></li>
+          <li class="footer__nav-item"><a href="pages/portfolio/fiction.html" class="footer__nav-link">Fiction</a></li>
           <li class="footer__nav-item"><a href="pages/portfolio/nonfiction.html" class="footer__nav-link">Nonfiction</a></li>
         </ul>
       </nav>
@@ -332,6 +328,9 @@
     </div>
 
   </footer>
+
+
+  <script src="assets/js/index.js" defer></script>
 
 </body>
 </html>
