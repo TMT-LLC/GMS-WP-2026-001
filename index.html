@@ -14,8 +14,10 @@
 </head>
 <body>
 
+  <!-- Decorative grain overlay (fixed, z-index 9999) -->
   <div class="site-grain" aria-hidden="true"></div>
 
+  <!-- Six-stripe color band pinned to top of viewport -->
   <div class="site-gem-band" aria-hidden="true">
     <span class="site-gem-band__stripe site-gem-band__stripe--wine"></span>
     <span class="site-gem-band__stripe site-gem-band__stripe--sienna"></span>
@@ -26,10 +28,13 @@
   </div>
 
 
-  <!-- Header -->
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
   <header class="site-header" id="site-header">
     <nav class="nav" id="main-nav" aria-label="Main navigation">
 
+      <!-- Logo (left column) -->
       <div class="nav__logo">
         <a href="index.html" class="nav__logo-link" aria-label="Grace M. Steele, Home">
           <span class="nav__logo-first">Grace M.</span>
@@ -37,10 +42,13 @@
         </a>
       </div>
 
+      <!-- Menu (center column) -->
       <ul class="nav__menu" id="nav-menu" role="list">
+
         <li class="nav__item">
           <a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a>
         </li>
+
         <li class="nav__item nav__item--has-dropdown">
           <a href="pages/portfolio.html" class="nav__link">
             Works <span class="nav__dropdown-caret" aria-hidden="true">&#9662;</span>
@@ -54,11 +62,14 @@
             </li>
           </ul>
         </li>
+
         <li class="nav__item">
           <a href="pages/about.html" class="nav__link">About</a>
         </li>
+
       </ul>
 
+      <!-- Instagram (right column) -->
       <div class="nav__utility">
         <a href="https://instagram.com/g.race_michael" class="nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow Grace on Instagram">
           <svg class="nav__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19">
@@ -77,7 +88,9 @@
   <main class="site-main" id="site-main">
 
 
-    <!-- Hero -->
+    <!-- ============================================================
+         HERO  (Section I)
+         ============================================================ -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
 
       <div class="hero__bg" aria-hidden="true"></div>
@@ -102,8 +115,7 @@
         </div>
 
         <p class="hero__tagline">
-          [Input content here]<br>
-          [Input content here]
+          <br>
         </p>
 
         <div class="hero__cta-group">
@@ -113,7 +125,7 @@
 
       </div>
 
-      <button class="section__next-btn hero__next-btn" data-target="section-statement" aria-label="Continue to next section">
+      <button class="section__next-btn hero__next-btn" data-target="section-works" aria-label="Continue to Works">
         <span class="section__next-label">Continue</span>
         <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
           <polyline points="6 9 12 15 18 9"></polyline>
@@ -123,52 +135,22 @@
     </section>
 
 
-    <!-- Statement -->
-    <section class="section section--statement" id="section-statement" aria-labelledby="statement-quote">
-
-      <span class="section__chapter" aria-hidden="true">II</span>
-
-      <div class="section__inner">
-
-        <div class="statement__gem-row anim-write" aria-hidden="true">
-          <span class="statement__gem statement__gem--wine"></span>
-          <span class="statement__gem statement__gem--sienna"></span>
-          <span class="statement__gem statement__gem--mustard"></span>
-          <span class="statement__gem statement__gem--jade"></span>
-          <span class="statement__gem statement__gem--navy"></span>
-          <span class="statement__gem statement__gem--plum"></span>
-        </div>
-
-        <blockquote class="statement__quote" id="statement-quote">
-          <p class="statement__quote-text anim-write">
-            [Input content here]
-          </p>
-          <cite class="statement__quote-cite anim-write">Grace M. Steele</cite>
-        </blockquote>
-
-      </div>
-
-      <button class="section__next-btn" data-target="section-works" aria-label="Continue to Works">
-        <span class="section__next-label">Continue</span>
-        <svg class="section__next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-
-    </section>
-
-
-    <!-- Works -->
+    <!-- ============================================================
+         CREATIVE WORKS  (Section II)
+         ============================================================ -->
     <section class="section section--works" id="section-works" aria-labelledby="works-heading">
 
-      <span class="section__chapter" aria-hidden="true">III</span>
+      <span class="section__chapter" aria-hidden="true">II</span>
 
       <div class="section__inner">
 
         <header class="section__header">
           <span class="section__eyebrow anim-write">Explore</span>
           <h2 class="section__title anim-write" id="works-heading">Creative Works</h2>
-          <p class="section__subtitle anim-write">[Input content here]</p>
+          <p class="section__subtitle anim-write">
+            All of my creative work is NOT made with AI.<br>
+            Any and all of my content is NOT permissible to be used to train AI.
+          </p>
         </header>
 
         <div class="works__grid" id="works-grid">
@@ -178,7 +160,7 @@
             <div class="works__card-body">
               <span class="works__card-eyebrow">Imaginative Worlds</span>
               <h3 class="works__card-title">Fiction</h3>
-              <p class="works__card-desc">[Input content here]</p>
+              <p class="works__card-desc"><em>Story Title</em></p>
               <a href="pages/portfolio/fiction.html" class="works__card-cta">
                 Read Fiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -190,7 +172,7 @@
             <div class="works__card-body">
               <span class="works__card-eyebrow">True Stories</span>
               <h3 class="works__card-title">Nonfiction</h3>
-              <p class="works__card-desc">[Input content here]</p>
+              <p class="works__card-desc"><em>Story Title</em></p>
               <a href="pages/portfolio/nonfiction.html" class="works__card-cta">
                 Read Nonfiction <span class="works__card-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -215,36 +197,54 @@
     </section>
 
 
-    <!-- About Preview -->
+    <!-- ============================================================
+         ABOUT PREVIEW  (Section III)
+         ============================================================ -->
     <section class="section section--about-preview" id="section-about-preview" aria-labelledby="about-preview-heading">
 
-      <span class="section__chapter" aria-hidden="true">IV</span>
+      <span class="section__chapter" aria-hidden="true">III</span>
 
       <div class="section__inner section__inner--split">
 
+        <!-- Text column -->
         <div class="about-preview__text">
           <span class="section__eyebrow anim-write">The Author</span>
-          <h2 class="section__title anim-write" id="about-preview-heading">Behind the Page</h2>
-          <p class="about-preview__body anim-write">[Input content here]</p>
-          <p class="about-preview__body anim-write">[Input content here]</p>
+          <h2 class="section__title anim-write" id="about-preview-heading">Hi! My name is Grace!</h2>
+          <p class="about-preview__body anim-write">I am a writer with a <strong>talent</strong> and <strong>passion</strong> for
+                                                    <em>colorful</em> storytelling. This website is all about me,
+                                                    my creative works, my general interests, and 
+                                                    for others to become more interested in the industry!
+                                                    </p>
+          <p class="about-preview__body anim-write">This platform is here to allow me to share my own writing,
+                                                    work with others to bring their stories to life,
+                                                    discuss and share opinions on the creative writing industry,
+                                                    and make new friends along the way! So if that
+                                                    sounds like something you’re interested in, then
+                                                    check out the site and contact me!</p>
           <a href="pages/about.html" class="btn btn--primary anim-write">Learn More About Grace</a>
         </div>
 
+        <!-- Portrait column -->
         <div class="about-preview__portrait-wrap anim-write">
           <div class="portrait-frame">
+
             <div class="portrait-frame__gem-bar" aria-hidden="true">
               <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--wine"></span>
               <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--plum"></span>
               <span class="portrait-frame__gem-stripe portrait-frame__gem-stripe--navy"></span>
             </div>
+
             <img
               src="assets/img/headshot-noback.png"
               alt="Grace M. Steele"
               class="portrait-frame__img"
               loading="lazy"
             >
+
             <div class="portrait-frame__halo" aria-hidden="true"></div>
+
             <p class="portrait-frame__caption" aria-hidden="true"><em>Grace M. Steele</em></p>
+
           </div>
         </div>
 
@@ -260,17 +260,22 @@
     </section>
 
 
-    <!-- Connect -->
+    <!-- ============================================================
+         CONNECT  (Section IV)
+         ============================================================ -->
     <section class="section section--connect" id="section-connect" aria-labelledby="connect-heading">
 
-      <span class="section__chapter" aria-hidden="true">V</span>
+      <span class="section__chapter" aria-hidden="true">IV</span>
 
       <div class="connect__bg" aria-hidden="true"></div>
 
       <div class="section__inner section__inner--centered">
+
         <span class="section__eyebrow anim-write">Follow Along</span>
         <h2 class="section__title anim-write" id="connect-heading">Stay Connected</h2>
-        <p class="connect__body anim-write">[Input content here]</p>
+
+        <p class="connect__body anim-write"><em>Feel free to follow and contact me on my socials!</em><br>😎</p>
+
         <a href="https://instagram.com/g.race_michael" class="btn btn--primary btn--with-icon anim-write" target="_blank" rel="noopener noreferrer">
           <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -279,6 +284,7 @@
           </svg>
           @g.race_michael
         </a>
+
       </div>
 
     </section>
@@ -287,7 +293,9 @@
   </main>
 
 
-  <!-- Footer -->
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
   <footer class="site-footer" id="site-footer">
 
     <div class="footer__gem-band" aria-hidden="true">
