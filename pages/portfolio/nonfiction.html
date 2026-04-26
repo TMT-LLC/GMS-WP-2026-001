@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grace M. Steele - Nonfiction. Read original essays and true stories.">
+  <title>Nonfiction - Grace M. Steele</title>
+  <link id="url-logo" rel="icon" type="image/png" href="/assets/img/GMS-url-logo1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/nonfiction.css">
+</head>
+<body>
+
+  <div class="site-grain" aria-hidden="true"></div>
+
+  <div class="site-gem-band" aria-hidden="true">
+    <span class="site-gem-band__stripe site-gem-band__stripe--wine"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--sienna"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--mustard"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--jade"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--navy"></span>
+    <span class="site-gem-band__stripe site-gem-band__stripe--plum"></span>
+  </div>
+
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+
+      <div class="nav__logo">
+        <a href="../../index.html" class="nav__logo-link" aria-label="Grace M. Steele, Home">
+          <span class="nav__logo-first">Grace M.</span>
+          <span class="nav__logo-last">Steele</span>
+        </a>
+      </div>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li class="nav__item">
+          <a href="../../index.html" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="../portfolio.html" class="nav__link nav__link--active" aria-current="page">
+            Works <span class="nav__dropdown-caret" aria-hidden="true">&#9662;</span>
+          </a>
+          <ul class="nav__dropdown" id="nav-dropdown-works" role="list" aria-label="Works submenu">
+            <li class="nav__dropdown-item">
+              <a href="fiction.html" class="nav__dropdown-link">Fiction</a>
+            </li>
+            <li class="nav__dropdown-item">
+              <a href="nonfiction.html" class="nav__dropdown-link">Nonfiction</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <a href="../about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="nav__utility">
+        <a href="https://instagram.com/g.race_michael" class="nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow Grace on Instagram">
+          <svg class="nav__social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="nav__social-label">@g.race_michael</span>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main class="page-main" id="page-main">
+
+
+    <!-- ============================================================
+         READER HERO
+         ============================================================ -->
+    <div class="reader-hero reader-hero--nonfiction">
+      <span class="reader-hero__watermark" aria-hidden="true">Nonfiction</span>
+      <div class="page-inner">
+        <div class="reader-hero__content">
+
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span class="breadcrumb__sep" aria-hidden="true">/</span>
+            <a href="../portfolio.html">Works</a>
+            <span class="breadcrumb__sep" aria-hidden="true">/</span>
+            <span aria-current="page">Nonfiction</span>
+          </nav>
+
+          <span class="reader-hero__label">True Stories</span>
+          <h1 class="reader-hero__title">Nonfiction</h1>
+          <p class="reader-hero__sub">
+            Select a work below to begin reading.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+         WORK SELECTOR
+         Add a .work-btn for each PDF in assets/pdf/nonfiction/.
+         data-pdf must be the path from the site root.
+         ============================================================ -->
+    <div class="work-list">
+      <div class="page-inner">
+        <p class="work-list__heading">Available Works</p>
+
+        <div class="work-list__row" id="work-list-row" role="list">
+
+          <button class="work-btn" data-pdf="../../assets/pdf/nonfiction/[filename].pdf" type="button" role="listitem">
+            <span class="work-btn__title">[Input content here]</span>
+            <span class="work-btn__meta">[Input content here]</span>
+          </button>
+
+          <button class="work-btn" data-pdf="../../assets/pdf/nonfiction/[filename].pdf" type="button" role="listitem">
+            <span class="work-btn__title">[Input content here]</span>
+            <span class="work-btn__meta">[Input content here]</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+         PDF READER
+         ============================================================ -->
+
+    <div class="protection-notice" role="note" aria-label="Content protection notice">
+      <span class="protection-notice__dot" aria-hidden="true"></span>
+      <p class="protection-notice__text">
+        This content is protected. Downloading, copying, and screenshotting are disabled.
+        All works are original and copyright Grace M. Steele.
+      </p>
+    </div>
+
+    <!-- Top controls -->
+    <div class="reader-controls" id="reader-controls-top" aria-label="Reader controls">
+
+      <p class="reader-page-info" id="page-info-top" aria-live="polite">
+        Select a work above to begin.
+      </p>
+
+      <div class="reader-nav" role="group" aria-label="Page navigation">
+        <button class="reader-nav__btn" id="prev-btn-top" type="button" disabled aria-label="Previous page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Prev
+        </button>
+        <button class="reader-nav__btn" id="next-btn-top" type="button" disabled aria-label="Next page">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="reader-zoom" role="group" aria-label="Zoom controls">
+        <button class="reader-zoom__btn" id="zoom-out-btn" type="button" aria-label="Zoom out">&#8722;</button>
+        <span class="reader-zoom__level" id="zoom-level" aria-live="polite">100%</span>
+        <button class="reader-zoom__btn" id="zoom-in-btn" type="button" aria-label="Zoom in">&#43;</button>
+      </div>
+
+    </div>
+
+    <!-- Canvas area -->
+    <div class="reader-frame" id="reader-frame">
+
+      <div class="reader-shield" id="reader-shield" aria-hidden="true"></div>
+
+      <div class="reader-canvas-stack" id="canvas-stack">
+
+        <div class="reader-empty" id="reader-empty">
+          <p class="reader-empty__mark" aria-hidden="true">"</p>
+          <p class="reader-empty__text">Choose a work from the list above to start reading.</p>
+        </div>
+
+        <div class="reader-loading" id="reader-loading" style="display:none;">
+          <div class="reader-loading__spinner" aria-hidden="true"></div>
+          <p class="reader-loading__text">Loading...</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom controls -->
+    <div class="reader-controls reader-controls--bottom" id="reader-controls-bottom" aria-label="Reader controls (bottom)">
+
+      <p class="reader-page-info" id="page-info-bottom" aria-live="polite"></p>
+
+      <div class="reader-nav" role="group" aria-label="Page navigation">
+        <button class="reader-nav__btn" id="prev-btn-bottom" type="button" disabled aria-label="Previous page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Prev
+        </button>
+        <button class="reader-nav__btn" id="next-btn-bottom" type="button" disabled aria-label="Next page">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="reader-zoom" role="group" aria-label="Zoom controls">
+        <button class="reader-zoom__btn" id="zoom-out-btn-b" type="button" aria-label="Zoom out">&#8722;</button>
+        <span class="reader-zoom__level" id="zoom-level-b" aria-live="polite">100%</span>
+        <button class="reader-zoom__btn" id="zoom-in-btn-b" type="button" aria-label="Zoom in">&#43;</button>
+      </div>
+
+    </div>
+
+    <div class="copyright-notice" role="note">
+      <div class="copyright-notice__inner">
+        <p class="copyright-notice__text">
+          All nonfiction on this page is original, handwritten work by Grace M. Steele.
+          It is not AI-generated, and it may not be used to train AI models.
+          Reproduction without permission is prohibited.
+          &copy; 2026 Grace M. Steele.
+        </p>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" id="site-footer">
+
+    <div class="footer__gem-band" aria-hidden="true">
+      <span class="footer__gem-stripe footer__gem-stripe--wine"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--sienna"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--mustard"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--jade"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--navy"></span>
+      <span class="footer__gem-stripe footer__gem-stripe--plum"></span>
+    </div>
+
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <p class="footer__name">Grace M. Steele</p>
+        <p class="footer__descriptor">Writer &amp; Creative Individual</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul class="footer__nav-list" role="list">
+          <li class="footer__nav-item"><a href="../../index.html" class="footer__nav-link">Home</a></li>
+          <li class="footer__nav-item"><a href="../about.html"    class="footer__nav-link">About</a></li>
+          <li class="footer__nav-item"><a href="fiction.html"     class="footer__nav-link">Fiction</a></li>
+          <li class="footer__nav-item"><a href="nonfiction.html"  class="footer__nav-link">Nonfiction</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://instagram.com/g.race_michael" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Grace on Instagram">
+          @g.race_michael
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 TIMBUKTU LLC. All rights reserved.</p>
+    </div>
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="../../assets/js/index.js"  defer></script>
+  <script src="../../assets/js/reader.js" defer></script>
+
+</body>
+</html>

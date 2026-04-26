@@ -1,0 +1,1054 @@
+/*
+ * GRACE M. STEELE - nonfiction.css
+ * TIMBUKTU LLC, 2026
+ *
+ * Stylesheet for pages/portfolio/nonfiction.html
+ *
+ * HOW TO EDIT
+ * -----------
+ * Colors / spacing:  Section 1 (Custom Properties)
+ * Nav:               Section 8 (Header and Nav)
+ * Footer:            Section 9 (Footer)
+ * Page hero area:    Section 10 (Reader Hero)
+ * Work selector:     Section 11 (Work List)
+ * PDF reader:        Section 12 (Reader Frame and Controls)
+ *
+ * To change the accent color from wine to something else,
+ * update --accent below and all references will update.
+ *
+ * Contents
+ * --------
+ *  1. Custom Properties
+ *  2. Reset
+ *  3. Text Selection
+ *  4. Typography
+ *  5. Buttons
+ *  6. Grain Overlay
+ *  7. Gem Band
+ *  8. Header and Nav
+ *  9. Footer
+ * 10. Reader Hero
+ * 11. Work List (selector row)
+ * 12. Reader Frame and Controls
+ * 13. Content Protection Notice
+ * 14. Keyframes
+ * 15. Scroll-Driven Header
+ * 16. Print Protection
+ * 17. Responsive
+ */
+
+
+/* ============================================================
+   1. CUSTOM PROPERTIES
+   ============================================================ */
+
+:root {
+    /* Nonfiction accent color - change this one value to retheme */
+    --accent: #1C3A6E;
+
+    --wine:    #8A2C3B;
+    --sienna:  #B5592F;
+    --mustard: #C9960E;
+    --jade:    #1D8A68;
+    --navy:    #1C3A6E;
+    --plum:    #7A3661;
+    --bg:      #0F0A0C;
+    --surface: #1A1216;
+    --border:  #2E2028;
+    --white:   #FAF5EE;
+    --dim:     rgba(250, 245, 238, 0.68);
+    --muted:   #8E7E85;
+    --font-display: 'Bodoni Moda', Georgia, serif;
+    --font-body:    'Crimson Pro', Georgia, serif;
+    --font-ui:      'Jost', 'Helvetica Neue', sans-serif;
+    --font-mono:    'Courier Prime', 'Courier New', monospace;
+    --xs: 0.5rem;
+    --sm: 1rem;
+    --md: 2rem;
+    --lg: 4rem;
+    --xl: 7rem;
+    --max-width:     1200px;
+    --gem-band-h:    3px;
+    --header-height: 72px;
+    --header-offset: calc(var(--header-height) + var(--gem-band-h));
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+    --t:        0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --r-sm: 4px;
+    --r-md: 10px;
+    --r-lg: 20px;
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.72;
+    overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+a        { color: inherit; text-decoration: none; }
+ul, ol   { list-style: none; }
+
+:focus-visible {
+    outline: 2px solid var(--mustard);
+    outline-offset: 3px;
+    border-radius: var(--r-sm);
+}
+
+
+/* ============================================================
+   3. TEXT SELECTION
+   ============================================================ */
+
+::selection,
+::-moz-selection {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+/* ============================================================
+   4. TYPOGRAPHY
+   ============================================================ */
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+p    { font-family: var(--font-body); line-height: 1.78; }
+em   { font-style: italic; }
+cite { font-style: normal; }
+
+
+/* ============================================================
+   5. BUTTONS
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--xs);
+    padding: 0.78rem 2.1rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1.5px solid transparent;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--t), border-color var(--t), color var(--t), transform var(--t);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.12) 50%, transparent 65%);
+    transform: translateX(-150%);
+    transition: transform 0.5s var(--ease-out);
+    will-change: transform;
+}
+
+.btn:hover        { transform: translateY(-2px); }
+.btn:hover::after { transform: translateX(150%); }
+.btn:active       { transform: translateY(0); }
+
+.btn--primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--white);
+}
+.btn--primary:hover { background-color: #1e4a8a; border-color: #1e4a8a; }
+
+.btn--outline {
+    border-color: rgba(250, 245, 238, 0.36);
+    color: var(--white);
+}
+.btn--outline:hover {
+    background-color: rgba(250, 245, 238, 0.06);
+    border-color: var(--white);
+}
+
+.btn--ghost {
+    border-color: var(--border);
+    color: var(--dim);
+}
+.btn--ghost:hover {
+    border-color: var(--muted);
+    color: var(--white);
+    background-color: rgba(250, 245, 238, 0.04);
+}
+
+.btn--sm        { padding: 0.5rem 1.2rem; font-size: 0.72rem; }
+.btn--with-icon { gap: 0.6rem; }
+.btn__icon      { flex-shrink: 0; }
+
+
+/* ============================================================
+   6. GRAIN OVERLAY
+   ============================================================ */
+
+.site-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+    opacity: 0.025;
+    animation: grain 0.2s steps(1) infinite;
+}
+
+
+/* ============================================================
+   7. GEM BAND
+   ============================================================ */
+
+.site-gem-band {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--gem-band-h);
+    display: flex;
+    z-index: 1000;
+}
+
+.site-gem-band__stripe { flex: 1 1 0; animation: stripe-glow 6s ease-in-out infinite; }
+.site-gem-band__stripe--wine    { background-color: var(--wine);    animation-delay: 0s; }
+.site-gem-band__stripe--sienna  { background-color: var(--sienna);  animation-delay: 1s; }
+.site-gem-band__stripe--mustard { background-color: var(--mustard); animation-delay: 2s; }
+.site-gem-band__stripe--jade    { background-color: var(--jade);    animation-delay: 3s; }
+.site-gem-band__stripe--navy    { background-color: var(--navy);    animation-delay: 4s; }
+.site-gem-band__stripe--plum    { background-color: var(--plum);    animation-delay: 5s; }
+
+
+/* ============================================================
+   8. HEADER AND NAV
+   ============================================================ */
+
+.site-header {
+    position: fixed;
+    top: var(--gem-band-h);
+    left: 0; right: 0;
+    z-index: 900;
+    height: var(--header-height);
+    background-color: rgba(15, 10, 12, 0.60);
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+    animation: hue-drift 20s ease-in-out infinite;
+}
+
+.site-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--plum) 18%, var(--mustard) 36%, var(--jade) 54%, var(--navy) 72%, var(--plum) 90%, var(--wine) 100%);
+    background-size: 200% 100%;
+    opacity: 0.35;
+    animation: rainbow-sweep 8s linear infinite;
+    transition: opacity 0.6s var(--ease-out);
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--md);
+    gap: var(--md);
+}
+
+.nav__logo-link {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    transition: opacity var(--t);
+}
+.nav__logo-link:hover { opacity: 0.75; }
+
+.nav__logo-first {
+    font-family: var(--font-ui);
+    font-size: 0.64rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.nav__logo-last {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.nav__menu { display: flex; align-items: center; gap: var(--md); }
+.nav__item { position: relative; }
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--dim);
+    padding: 0.3rem 0;
+    position: relative;
+    transition: color var(--t);
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 1.5px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s var(--ease-out);
+}
+
+.nav__link:hover,
+.nav__link--active { color: var(--white); }
+.nav__link:hover::after,
+.nav__link--active::after { transform: scaleX(1); }
+
+.nav__dropdown-caret { font-size: 0.55rem; transition: transform 0.22s var(--ease); }
+.nav__item--has-dropdown:hover .nav__dropdown-caret { transform: scaleY(-1); }
+
+.nav__dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    min-width: 165px;
+    background-color: rgba(26, 18, 22, 0.97);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+    transition: opacity 0.22s var(--ease), visibility 0.22s, transform 0.22s var(--ease-out);
+}
+
+.nav__dropdown::before {
+    content: '';
+    position: absolute;
+    top: -5px; left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px; height: 8px;
+    background-color: rgba(26, 18, 22, 0.97);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.nav__item--has-dropdown:hover .nav__dropdown,
+.nav__item--has-dropdown:focus-within .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav__dropdown-link {
+    display: block;
+    padding: 0.58rem 1.3rem;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    transition: color var(--t), background-color var(--t);
+}
+.nav__dropdown-link:hover {
+    color: var(--white);
+    background-color: rgba(250, 245, 238, 0.05);
+}
+
+.nav__utility { justify-self: end; }
+
+.nav__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--muted);
+    transition: color var(--t);
+}
+.nav__social-link:hover { color: var(--white); }
+
+
+/* ============================================================
+   9. FOOTER
+   ============================================================ */
+
+.site-footer {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+.footer__gem-band { display: flex; height: 2px; }
+.footer__gem-stripe          { flex: 1 1 0; }
+.footer__gem-stripe--wine    { background-color: var(--wine);    }
+.footer__gem-stripe--sienna  { background-color: var(--sienna);  }
+.footer__gem-stripe--mustard { background-color: var(--mustard); }
+.footer__gem-stripe--jade    { background-color: var(--jade);    }
+.footer__gem-stripe--navy    { background-color: var(--navy);    }
+.footer__gem-stripe--plum    { background-color: var(--plum);    }
+
+.footer__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--md);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--lg) var(--md);
+    flex-wrap: wrap;
+}
+
+.footer__brand { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.footer__name {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.footer__descriptor {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.footer__nav-list { display: flex; flex-direction: column; gap: 0.55rem; }
+
+.footer__nav-link {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color var(--t);
+}
+.footer__nav-link:hover { color: var(--white); }
+
+.footer__social-link {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color var(--t);
+}
+
+.footer__social-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s var(--ease-out);
+}
+
+.footer__social-link:hover            { color: var(--white); }
+.footer__social-link:hover::after     { transform: scaleX(1); }
+
+.footer__bottom {
+    border-top: 1px solid var(--border);
+    padding: var(--sm) var(--md);
+    text-align: center;
+}
+
+.footer__copyright {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   10. READER HERO
+   ============================================================ */
+
+.page-main { padding-top: var(--header-offset); }
+
+.page-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--md);
+}
+
+.reader-hero {
+    position: relative;
+    padding: var(--lg) 0 var(--md);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    background: radial-gradient(ellipse 60% 100% at 90% 50%, rgba(28,58,110,0.14) 0%, transparent 70%);
+}
+
+/* Faint decorative watermark word */
+.reader-hero__watermark {
+    position: absolute;
+    right: var(--md);
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 14vw, 11rem);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.035;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.reader-hero__content { position: relative; z-index: 1; }
+
+/* Breadcrumb trail */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: var(--md);
+}
+
+.breadcrumb a { transition: color var(--t); }
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb__sep { color: var(--border); }
+
+.reader-hero__label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mustard);
+    margin-bottom: var(--sm);
+}
+
+.reader-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+}
+
+.reader-hero__sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--dim);
+}
+
+
+/* ============================================================
+   11. WORK LIST  (selector row)
+   ============================================================
+   Horizontal scrollable row of buttons - one per available work.
+   JS adds .is-active to the currently selected button.
+   ============================================================ */
+
+.work-list {
+    padding: var(--md) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.work-list__heading {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: var(--sm);
+}
+
+/* Horizontal scrollable row */
+.work-list__row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+}
+.work-list__row::-webkit-scrollbar { display: none; }
+
+/* Individual work selector button */
+.work-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.85rem 1.2rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color var(--t), background-color var(--t);
+    text-align: left;
+}
+
+.work-btn:hover {
+    border-color: rgba(250, 245, 238, 0.14);
+    background-color: rgba(250, 245, 238, 0.03);
+}
+
+.work-btn.is-active {
+    border-color: var(--accent);
+    background-color: rgba(138, 44, 59, 0.08);
+}
+
+.work-btn__title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.work-btn__meta {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   12. READER FRAME AND CONTROLS
+   ============================================================
+   The reader renders PDF pages as canvas elements inside
+   .reader-canvas-stack. JS (reader.js) handles loading,
+   page turns, and zoom. The .reader-shield intercepts
+   right-click on the canvas to block save-image.
+   ============================================================ */
+
+/* Content protection notice bar */
+.protection-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem var(--md);
+    background-color: rgba(138, 44, 59, 0.08);
+    border-bottom: 1px solid rgba(138, 44, 59, 0.18);
+}
+
+.protection-notice__dot {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.protection-notice__text {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 245, 238, 0.45);
+    line-height: 1.5;
+}
+
+/* Top and bottom control bars */
+.reader-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--md);
+    padding: 0.85rem var(--md);
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.reader-controls--bottom {
+    border-bottom: none;
+    border-top: 1px solid var(--border);
+}
+
+/* Page X of Y counter */
+.reader-page-info {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    flex-shrink: 0;
+    min-width: 7rem;
+}
+
+/* Prev / Next buttons */
+.reader-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reader-nav__btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dim);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 0.45rem 0.9rem;
+    cursor: pointer;
+    transition: color var(--t), border-color var(--t), background-color var(--t);
+}
+
+.reader-nav__btn:hover {
+    color: var(--white);
+    border-color: var(--muted);
+    background-color: rgba(250, 245, 238, 0.04);
+}
+
+.reader-nav__btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Zoom controls */
+.reader-zoom {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.reader-zoom__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    color: var(--dim);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color var(--t), border-color var(--t);
+}
+
+.reader-zoom__btn:hover {
+    color: var(--white);
+    border-color: var(--muted);
+}
+
+.reader-zoom__level {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    min-width: 3.2rem;
+    text-align: center;
+}
+
+/* Dark reading environment */
+.reader-frame {
+    background-color: #141618;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: var(--md) 0;
+    position: relative;
+}
+
+/* Canvas pages stack vertically */
+.reader-canvas-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0 var(--md);
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* PDF.js renders into these canvases */
+.reader-canvas-stack canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--r-sm);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.65);
+    pointer-events: none;
+}
+
+/* Loading state */
+.reader-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sm);
+    padding: var(--xl) var(--md);
+    min-height: 50vh;
+}
+
+.reader-loading__spinner {
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.reader-loading__text {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Empty state when no work is selected */
+.reader-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--xl) var(--md);
+    text-align: center;
+    min-height: 40vh;
+}
+
+.reader-empty__mark {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-style: italic;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: var(--sm);
+    user-select: none;
+}
+
+.reader-empty__text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* Transparent overlay to intercept right-click over canvases */
+.reader-shield {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: default;
+}
+
+
+/* ============================================================
+   13. CONTENT PROTECTION NOTICE  (bottom of page)
+   ============================================================ */
+
+.copyright-notice {
+    padding: var(--sm) var(--md);
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+.copyright-notice__inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright-notice__text {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: rgba(250, 245, 238, 0.5);
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   14. KEYFRAMES
+   ============================================================ */
+
+@keyframes write-in {
+    from { clip-path: inset(0 100% 0 0); opacity: 1; }
+    to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stripe-glow {
+    0%, 50%, 100% { opacity: 0.75; }
+    25%            { opacity: 1;    }
+}
+
+@keyframes rainbow-sweep {
+    from { background-position: 0%   center; }
+    to   { background-position: 200% center; }
+}
+
+@keyframes hue-drift {
+    0%   { background-color: rgba(15, 10, 12, 0.82); }
+    25%  { background-color: rgba(18, 10, 13, 0.82); }
+    50%  { background-color: rgba(12, 10, 15, 0.82); }
+    75%  { background-color: rgba(14, 11, 12, 0.82); }
+    100% { background-color: rgba(15, 10, 12, 0.82); }
+}
+
+@keyframes grain {
+    0%  { background-position:   0px   0px; }
+    12% { background-position: -48px -76px; }
+    25% { background-position:  38px -28px; }
+    37% { background-position: -26px  58px; }
+    50% { background-position:  64px  38px; }
+    62% { background-position: -54px  18px; }
+    75% { background-position:  28px -66px; }
+    87% { background-position: -18px  78px; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+
+/* ============================================================
+   15. SCROLL-DRIVEN HEADER
+   ============================================================ */
+
+@supports (animation-timeline: scroll()) {
+
+    .site-header {
+        animation:
+            hue-drift   20s ease-in-out infinite,
+            header-fill linear both;
+        animation-timeline: auto, scroll(root);
+        animation-range:    auto, 0px 140px;
+    }
+
+    @keyframes header-fill {
+        from { background-color: rgba(15, 10, 12, 0.30); border-bottom-color: transparent; }
+        to   { background-color: rgba(15, 10, 12, 0.94); border-bottom-color: var(--border); }
+    }
+
+    .site-header::after {
+        animation:
+            rainbow-sweep 8s linear infinite,
+            rainbow-fade  linear both;
+        animation-timeline: auto, scroll(root);
+        animation-range:    auto, 60px 160px;
+    }
+
+    @keyframes rainbow-fade {
+        from { opacity: 0.35; }
+        to   { opacity: 1;    }
+    }
+}
+
+
+/* ============================================================
+   16. PRINT PROTECTION
+   ============================================================ */
+
+@media print {
+    body { display: none !important; }
+}
+
+
+/* ============================================================
+   17. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .nav__social-label { display: none; }
+
+    .reader-controls { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    .reader-nav      { width: 100%; justify-content: space-between; }
+    .reader-zoom     { width: 100%; justify-content: space-between; }
+
+    .footer__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--md);
+    }
+    .footer__nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--sm) var(--md);
+    }
+}
+
+@media (max-width: 600px) {
+    :root { --xl: 4rem; --lg: 2.5rem; }
+    .nav       { padding: 0 var(--sm); gap: var(--sm); }
+    .nav__menu { gap: var(--sm); }
+    .page-inner            { padding: 0 var(--sm); }
+    .reader-canvas-stack   { padding: 0 var(--sm); gap: 0.75rem; }
+    .reader-hero__title    { font-size: clamp(2rem, 7vw, 3rem); }
+}
