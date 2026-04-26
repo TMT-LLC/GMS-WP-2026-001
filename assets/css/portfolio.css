@@ -570,6 +570,8 @@ cite { font-style: normal; }
     position: relative;
     z-index: 1;
     max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .page-hero__label {
